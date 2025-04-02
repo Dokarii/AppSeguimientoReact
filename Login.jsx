@@ -1,7 +1,9 @@
 /* rafce -> Crea un componente funcional  flecha */
 /* rfce -> Crea un componente funcional regular */
 import { useState } from "react";
+import { alertaConfirmacion, alertaError } from "../helpers/funciones";
 import "./Login.css";
+
 const Login = () => {
   const [getUsuario, setUsuario] = useState("");
   const [getPassword, setPassword] = useState("");
@@ -9,12 +11,12 @@ const Login = () => {
 
   function inicioSesion() {
     if (getUsuario === "Admin" && getPassword === "admin") {
-      alert("Bienvenido");
+      alertaConfirmacion();
       let horaInicio = new Date();
       console.log(horaInicio);
       // setHoraLogin(new Date().toLocaleDateString());
       // console.log(getHoraLogin);
-    } else alert("Usuario o contraseña incorrectos");
+    } else alertaError();
     let horaIniciIncorrecto = new Date();
     console.log(
       horaIniciIncorrecto,
